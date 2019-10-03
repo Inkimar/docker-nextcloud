@@ -43,7 +43,7 @@ services:
     restart: always
 ```
 
-my example <p>
+My example (mapping of ports) <p>
 
 
 ```
@@ -58,6 +58,8 @@ services:
     image: mariadb:10.4.8
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
+    ports:
+      - 13306:3306
     volumes:
       - db:/var/lib/mysql
     environment:
@@ -76,3 +78,9 @@ services:
       - nextcloud:/var/www/html
     restart: always
 ```
+
+Go to localhost:9080 and fix these Settings: <p>
+1. database user = nextcloud
+2. Database password = ingimar
+3. database name = nextcloud 
+4. db:3306
